@@ -1,620 +1,226 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css"/>
+    <title>Document</title>
+</head>
+<body>
+ <div class="d1">
+    <div class="image-container">
+    <img src="images/a main banner.jpg" alt="Banner Image" width="100%" height="100%">
+    <div class="text-overlay">
+     <h1><span class="F-line">Welcome to Our </span> 
+        <span class="N-line"> Home Decor Furnish</span> 
+         <span class="highlight">WORLD</span></h1>
+    </div>
+    </div>
+    <nav>
+     <div class="nav-left">
+        <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="menu-icon">
+        <img src="images/a menu bar.png" width="40px" height="40px" alt="Menu Icon">
+        </label>
+        <div class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="#About Us">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#Sign Up">Sign Up</a>
+        </div>
+        </div>
+     <div class="nav-right">
+        <ul class="nav-cont">
+        <li ><a href="Sofa & Seat.html" style="position: relative; right: 1px;">Sofa & Seat </a></li>
+        <li><a href="Bed & Mattress.html" style="position: relative; right: 10px; left: 5px;">Bed & Mattress</a></li>
+        <li><a href="Kitchen & Dining.html" style="position: relative; right: 10px; left: 10px;">Kitchen & Dining</a></li>
+        <li><a href="Lamps & Lighting.html" style="position: relative; right: 10px; left: 12px;">Lamps & Lighting</a></li>
+        <li><a href="Wall Art & Paintings.html" style="position: relative; right: 10px; left: 15px;">Wall Art & Painting</a></li>
+        <li><a href="Furniture & Decor.html" style="position: relative; right: 8px; left: 17px;">Furniture & Decor</a></li>
+        </ul>
+        </div>
+    </nav>
+    <div class="offer-section">
+  <div class="offer-left">
+    <div class="icon">%</div>
+    <div class="offer-text">
+      <div class="main-text">No Cost EMI</div>
+      <div class="sub-text">on leading banks*</div>
+      <div class="bank-logos">
+        <img src="images/HDFC-Bank-Logo.png" alt="HDFC" />
+        <img src="images/icici-bank-logo.png" alt="ICICI" />
+        <img src="images/SBI-Logo.png" alt="SBI" />
+        <img src="images/idfc-first-bank logo.jpg" alt="IDFC" />
+        <img src="images/Axis_Bank logo.png" alt="Axis" />
+      </div>
+    </div>
+  </div>
 
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;   /* This prevents horizontal scroll */
-  overflow-y: auto;     /* This allows vertical scroll */
-  font-family: Arial, sans-serif;
-}
+  <div class="separator"></div>
 
-.d1 {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
+  <div class="offer-right">
+    <img src="images/upi logo.png" alt="UPI Logo" class="upi-logo" />
+    <div class="upi-text">
+      <div class="main-text">Extra 2% instant discount</div>
+      <div class="sub-text">on all UPI payments</div>
+    </div>
+  </div>
+</div>
 
-.image-container {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  border-radius: 16px;
-}
+<div class="text">
+  <h1 class="text-A">The Art of Living</h1>
+  <h5 class="text-B">Discover timeless decor inspirations that bring comfort, elegance, and personality to every corner of your home.</h5>
+</div>
+    <!-- <div class="layout-container">
+  <div class="top-section">
+    <div class="left-box">
+      <div class="left-top">
+        <div class="box image-box" style="background-image: url('images/living room 1.jpg');"></div>
+        <div class="box image-box" style="background-image: url('images/living room 3.webp');"></div>
+      </div>
+      <div class="left-bottom">
+        <div class="box image-box" style="background-image: url('images/living room 5.png');"></div>
+        <div class="box image-box" style="background-image: url('images/living room 7.webp');"></div>
+      </div>
+    </div>
+    <div class="right-box">
+      <div class="box image-box" style="background-image: url('images/living room 9.jpg');"></div>
+      <div class="box image-box" style="background-image: url('images/living room 11.jpg');"></div>
+    </div>
+  </div>
+  <div class="bottom-box">
+    <div class="bottom-left">
+      <div class="box image-box" style="background-image: url('images/living room 13.webp');"></div>
+      <div class="box image-box" style="background-image: url('images/living room 15.webp');"></div>
+    </div>
+    <div class="bottom-right">
+      <div class="box image-box" style="background-image: url('images/living room 17.jpeg');"></div>
+      <div class="right-bottom-nested">
+        <div class="box image-box" style="background-image: url('images/living room 2.jpg');"></div>
+        <div class="box image-box" style="background-image: url('images/living room 4.jpg');"></div>
+      </div>
+    </div>
+  </div>
+</div> -->
 
-.image-container img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-  display: block;
-}
+<div class="container">
+    <div class="about-section" id="About Us">
+      <h1>About Us</h1>
+      <p>Home Decor Furnish's association with Furniture needs no introduction. Home Decor Furnish is the world’s largest manufacturer of moulded furniture & India’s favourite furniture brand with 50 stores & 3,000+ distributors.</p>
+      <p>Our furniture has eternally been a part of Indian home’s interiors, knowingly or unknowingly taking space in the form of a simple plastic chair in your living room or an entire furniture set in your bedrooms or offices adding both emotion and charm to your sheen interiors.</p>
+      <p>Home Decor Furnish expertise in wooden Furniture is expanding with a strong network of approximately 20,000+ dealers spread across the country. From the fast-paced metro cities to the deepest regions in India, Home Decor Furnish aims to bring quality and budget-friendly furniture to everyone. With a plethora of trending yet quality products, Home Decor Furnish has been providing the best furnishing experience to its customers.</p>
+      <p>So what are you waiting for? Begin your best furnishing experience with our one-stop-shop only at Home Decor furniture.</p>
+    </div>
+  </div>
 
-.image-container:hover img {
-  transform: scale(1.05);
-}
-/* main text */
-.text-overlay {
- font-size: 60px;
-  text-align: center;
-  padding-top: 0px;
-  position: absolute;
-  top: 25%;
-  left: 30%;
-}
+  <div class="newsletter-section" id="Sign Up">
+    <h2>Join Our Newsletter To Receive Updates On Product Annoucements And Sales.</h2>
+    <form class="newsletter-form">
+      <input type="email" class="newsletter-input" placeholder="Enter your email address...">
+      <button type="submit" class="newsletter-button">Sign Up</button>
+    </form>
+  </div>
 
-.image-container:hover .text-overlay {
-  background: transparent;
-}
+  <div class="footer-links">
+    <h3><span class="highlights">Popular Furniture Categories :</span></h3>
+    <p>CHAIRS, TABLES, CABINETRY, SOFAS, DINING ROOM FURNITURE & BAR FURNITURE, DESIGNER BEDS, KIDS FURNITURE, SEATING,</p>
+    <h3><span class="highlights">Shop Furniture By Room :</span></h3>
+    <p>LIVING ROOM, DINING ROOM, BED ROOM, STUDY ROOM, BATH ROOM, KITCHEN,</p>
+  </div>
 
-.text-overlay h1 {
-  font-size: clamp(2rem, 5vw, 4rem); /* responsive font scaling */
-  line-height: 1.2;
-  font-weight: bold;
-}
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>OUR COMPANY</h3>
+        <ul>
+          <li>About Us</li>
+          <li>Career</li>
+          <li>Media</li>
+          <li>Blog</li>
+          <li>Our Stores</li>
+          <li>Customer Stories</li>
+          <li>Investor Relations</li>
+        </ul>
+      </div>
 
-.F-line,
-.N-line,
-.highlight {
-  display: block;
-  color: rgb(78, 34, 13);
-  text-shadow: 3px 2px 2px wheat;
-}
+      <div class="footer-section">
+        <h3>USEFUL LINKS</h3>
+        <ul>
+          <li>Custom Furniture</li>
+          <li>Exporters</li>
+          <li>Hotel Furniture</li>
+          <li>Delivery Location</li>
+          <li>Sitemap</li>
+        </ul>
+      </div>
 
-/* Optional: improve readability on very small screens */
-@media (max-width: 400px) {
-  .text-overlay h1 {
-    font-size: 1.8rem;
-  }
-}
+      <div class="footer-section">
+        <h3>SHOP BY ROOM</h3>
+        <ul>
+          <li>Living Room</li>
+          <li>Bedroom</li>
+          <li>Dining Room</li>
+          <li>Kids Room</li>
+          <li>Modular Kitchen</li>
+        </ul>
+      </div>
 
-.highlight {
-  color: #1d3612;
-  font-weight: bold;
-  font-size: 3.8rem;
-  text-shadow: 3px 2px 2px wheat;
-}
-/* Navigation bar */
-.nav{
-  width: 98%;
-  height: 10px;
-  border: 1px solid black;
-  overflow-x: hidden;
-  padding: 5px 2px;
-  position: fixed;
-  top: 5px;
-  display: flex;
-}
-.nav-left{
-  position:fixed;
-  top:3px;
-  left: 2px;
-  display: flex;
-}
-.menu-icon{
-  cursor: pointer;
-  display: inline-block;
-}
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 50px;                                  /* adjust based on icon position */
-  left: 0;
-  background-color: rgba(112, 82, 82, 0.3);
-  border: 1px solid #ccc;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  z-index: 1000;
-  min-width: 150px;
-  
-}
-.dropdown-menu a {
-  display: block;
-  padding: 10px 15px;
-  text-decoration: none;
-  color: wheat;
-  font-weight: 500;
-}
-.dropdown-menu a:hover {
-  background-color: #2f2929;
-}
-/* Show dropdown on icon click */
-#menu-toggle:checked + label + .dropdown-menu {
-  display: block;
-}
-.nav-right{
-  width: 95%;
-  position:fixed;
-  top:3px;
-  left: 10px;
-  display: flex;
+      <div class="footer-section">
+        <h3>PARTNERS</h3>
+        <ul>
+          <li>Become a Franchise</li>
+          <li>Sell on Platform</li>
+          <li>Design Partner</li>
+        </ul>
+        <h3 style="margin-top: 15px ;">TRUSTED BY</h3>
+        <img src="https://dummyimage.com/80x30/ccc/000&text=QRO" alt="QRO Certified">
+        <img src="https://dummyimage.com/80x30/ccc/000&text=Ukcert" alt="Ukcert Certified">
+      </div>
 
-}
-.nav-cont{
-  display: inline;
-  display: flex;
-  font-size: 5px;
-  position:absolute;
-  top: 10px;
-  left: 50px;
-  text-decoration:wavy;
-  font-weight: bold;
-}
-ul{
-  white-space: nowrap;
-  gap: 7px;
-}
-a{
-    font-size: 5px;
-    color: black;
-  }
-a:hover{
-    text-transform: capitalize;
-    text-shadow: 1px 1px 2px white;
-}
-@media (min-width: 540px) and (min-width: 768px){
-  a{
-    font-size: 15px;
-  }
-}
- /* offer section */
-.offer-section {
-   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 40px 50px;
-  margin-top: 20px;
-  background-color: #fff;
-  font-family: Arial, sans-serif;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  border-radius: 5px;
-  /* margin-left: 20px;
-  margin-right: 20px; */
-}
+      <div class="footer-section">
+        <h3>NEED HELP</h3>
+        <ul>
+          <li>Help Center</li>
+          <li>Contact Us</li>
+          <li>Track your order</li>
+          <li>Ask Expert</li>
+        </ul>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
 
-.offer-left {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: left;
-}
+    <div class="footer-delivery">
+      <p><strong>Delivery Across India:</strong> Ahmedabad, Bangalore, Bhopal, Chandigarh, Chennai, Coimbatore, Faridabad, Goa, Hyderabad, Jaipur and <a href="#">More Cities</a></p>
+    </div>
 
-.icon {
-  font-size: 50px;
-  font-weight: bold;
-  border: 2px solid #555;
-  padding: 10px 14px;
-  border-radius: 50%;
-  color: #333;
-  margin-left: 30px;
-}
+    <div class="footer-bottom">
+      <div class="payment-options">
+        <p>We accept:</p>
+        <img src="https://dummyimage.com/50x30/000/fff&text=Visa" alt="Visa">
+        <img src="https://dummyimage.com/50x30/000/fff&text=MasterCard" alt="MasterCard">
+        <img src="https://dummyimage.com/50x30/000/fff&text=AmEx" alt="American Express">
+        <img src="https://dummyimage.com/50x30/000/fff&text=RuPay" alt="RuPay">
+      </div>
+      <div class="app-links">
+        <p>Download App:</p>
+        <img src="https://dummyimage.com/100x30/000/fff&text=Play+Store" alt="Google Play">
+        <img src="https://dummyimage.com/100x30/000/fff&text=App+Store" alt="App Store">
+      </div>
+    </div>
 
-.offer-text .main-text {
-  font-size: 40px;
-  color: #00a0e3;
-  font-weight: bold;
-  padding-left: 30px;
-}
-
-.offer-text .sub-text {
-  font-size: 16px;
-  color: #333;
-  padding-left: 30px;
-}
-
-.bank-logos {
-  margin-top: 10px;
-}
-
-.bank-logos img {
-  height: 70px;
-  margin-left: 10px;
-}
-
-.separator {
-  width: 1px;
-  height: 80px;
-  background-color: #bbb;
-  margin: 0 30px;
-}
-
-.offer-right {
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.upi-logo {
-  height: 30px;
-  margin-right: 35px;
-}
-
-.upi-text .main-text {
-  font-size: 30px;
-  color: #00a0e3;
-  font-weight: bold;
-}
-
-.upi-text .sub-text {
-  font-size: 16px;
-  color: #333;
-}
-
-@media (min-width: 344px){
-  .offer-section {
-    padding: 10px;
-    border-radius: 4px;
-    padding-top: 10px;
-  }
-
-  .icon {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .offer-left, .offer-right {
-    flex-direction: row;
-    display: flex;
-    align-items: flex-start;
-    gap: 1px;
-    margin-top: 5px;
-  }
-
-  .offer-text .main-text,
-  .upi-text .main-text {
-    font-size: 15px;
-    display: flex;
-  }
-
-  .offer-text .sub-text,
-  .upi-text .sub-text {
-    font-size: 13px;
-    display: flex;
-   
-  }
-
-  .bank-logos {
-    gap: 5px;
-    flex-wrap: wrap;
-    margin-top: 6px;
-  }
-
-  .bank-logos img,
-  .upi-logo {
-    height: 24px;
-    margin-left: 10px;
-  }
-
-  .separator {
-    display: none;
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    height: 1px;
-    margin: 10px;
-  }
-
-  .offer-right {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-}
-
-
-@media(min-width: 1200px){
-  .icon {
-  font-size: 50px;
-  margin-left: 30px;
-  }
-  .offer-text .main-text {
-  font-size: 40px;
-  padding-left: 30px;
-}
-
-.offer-text .sub-text {
-  font-size: 20px;
-  padding-left: 30px;
-}
-
-.bank-logos {
-  margin-top: 10px;
-}
-
-.bank-logos img {
-  height: 60px;
-}
-.upi-logo {
-  height: 40px;
-  margin-right: 35px;
-}
-
-.upi-text .main-text {
-  font-size: 40px;
-}
-
-.upi-text .sub-text {
-  font-size: 20px;
-}
-}
-/* art of living */
-.text{
-  font-size: 20px;
-  text-align: center;
-  padding-top: 50px;
-}
-.text-A{
-  font-size: 36px;
-  font-weight: bold;
-  color: #333;
-  text-align: center;
-  opacity: 0;
-  animation: slideFadeIn 1s ease-out forwards;
-}
-.text-A::after {
-  content: "";
-  width: 100px;
-  height: 4px;
-  background: #e07a5f;
-  display: block;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-@keyframes slideFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.text-B{
-  font-size: 16px;
-  color: #666;
-  text-align: center;
-  margin-top: 10px;
-  animation: fadeInUp 1.8s ease-out forwards;
-  opacity: 0;
-}
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}   
-  /* footer section 1 */
-.container {
-  padding: 40px 80px;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-  color: #333;
-}
-.about-section h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.about-section p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-.newsletter-section {
-  background-color: #f8f8f8;
-  padding: 60px 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-}
-.newsletter-section h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-.newsletter-form {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.newsletter-input {
-  padding: 15px 20px;
-  width: 300px;
-  max-width: 90%;
-  border: 1px solid #ccc;
-  border-radius: 25px;
-  outline: none;
-  font-size: 16px;
-}
-.newsletter-button {
-  background-color: #0099e5;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 16px;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-.newsletter-button:hover {
-  background-color: #007acc;
-}
-.footer-links {
-  background-color: #f1f1f1;
-  padding: 40px 60px;
-}
-.footer-links h3 {
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-.footer-links p {
-  font-size: 16px;
-  color: #444;
-  line-height: 1.5;
-  margin-bottom: 20px;
-}
-.highlights {
-  font-weight: 700;
-}
-
-    /* Responsive Styles */
-@media (max-width: 768px) {
-  .container {
-    padding: 30px 20px;
-  }
-  .about-section h1 {
-    font-size: 28px;
-    text-align: center;
-  }
-  .about-section p {
-    font-size: 16px;
-  }
- .newsletter-section h2 {
-    font-size: 18px;
-    padding: 0 10px;
-  }
- .newsletter-button {
-    width: 100%;
-    max-width: 300px;
-  }
- .footer-links {
-    padding: 30px 20px;
-  }
-  .footer-links h3 {
-   font-size: 18px;
-  }
- .footer-links p {
-  font-size: 14px;
- }
-}
-
-/* footer section */
-footer {
-  background: #f5f5f5;
-  padding: 40px 20px;
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-  animation: fadeIn 1.2s ease-in-out;
-  text-align: center;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.footer-section {
-  flex: 1 1 200px;
-  margin: 20px;
-  animation: fadeIn 1s ease-in;
-  transition: transform 0.3s ease;
-}
-.footer-section:hover {
-  transform: translateY(-5px);
-}
-.footer-section h3 {
-  margin-bottom: 15px;
-  font-size: 16px;
-  font-weight: bold;
-}
-.footer-section ul {
-  list-style: none; /* Show bullet points */
-  padding-left: 25px; /* Indent for bullets */
-  margin: 0;
-  white-space: nowrap;
-}
-.footer-section ul li {
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-.footer-section ul li:hover {
-  color: #d35400;
-}
-.footer-section img {
-  margin-right: 10px;
-  margin-top: 8px;
-}
-.social-icons {
-  margin-top: 10px;
-}
-.social-icons a {
-  margin-right: 12px;
-  font-size: 18px;
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-.social-icons a:hover {
-  color: #d35400;
-  transform: scale(1.2);
-}
-.footer-delivery {
-  font-size: 14px;
-  margin-top: 20px;
-  padding: 0 20px;
-}
-.footer-delivery a {
-  color: orange;
-  text-decoration: none;
-  transition: text-decoration 0.3s;
-}
-.footer-delivery a:hover {
-  text-decoration: underline;
-}
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 20px;
-  border-top: 1px solid #ddd;
-}
-.payment-options img,
-.app-links img {
-  margin-right: 10px;
-  margin-top: 10px;
-  transition: transform 0.3s ease;
-}
-.payment-options img:hover,
-.app-links img:hover {
-  transform: scale(1.1);
-}
-.footer-legal {
-  border-top: 1px solid #ccc;
-  margin-top: 20px;
-  text-align: center;
-  font-size: 13px;
-  padding-top: 10px;
-  color: #666;
-}
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-  }
-  .footer-section {
-    margin: 10px 0;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-}
+    <div class="footer-legal">
+      <p>© 2015–2025 Homedecor.com. All rights reserved.</p>
+      <p>Terms of Use | Security | Return & Refund | Payment Policy | Grievance Cell</p>
+      <p><strong>Registered Office:</strong> Your Company Pvt. Ltd., Jaipur, India</p>
+    </div>
+  </footer>
+</body>
+</html>
