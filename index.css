@@ -167,12 +167,12 @@ a:hover{
     gap: 28px;
   }
 }
-@media (min-width: 540px){
+@media (min-width: 768px){
   a{
-    font-size: 10px;
+    font-size: 13px;
   }
   ul{
-    gap: 7px;
+    gap: 10px;
   }
 }
  /* offer section */
