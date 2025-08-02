@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kitchen & Dining</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    nav{
+    padding: 8px;
+    width: 98%;
+    display: flex;
+    position: fixed; 
+    top: 1px;
+    align-items: center;
+    border-radius: 5px;
+    }
+.nav-left{
+    width: 3%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-right: 20px;
+     }
+.menu-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;                                  /* adjust based on icon position */
+  left: 0;
+  background-color: rgba(112, 82, 82, 0.3);
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  min-width: 150px;
+  
+}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: wheat;
+  font-weight: 500;
+}
+.dropdown-menu a:hover {
+  background-color: #2f2929;
+}
+/* Show dropdown on icon click */
+#menu-toggle:checked + label + .dropdown-menu {
+  display: block;
+}
+.nav-right{
+    width: 98%;
+}
+ul{
+    box-shadow: inset 0 0 0 1000px rgba(179, 134, 134, 0.3);
+    border-radius: 5px;
+   } 
+li{
+    padding: 8px;
+    width: 100px;
+   }
+li:hover{
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px white;
+   }
+.nav-cont{
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap; 
+    white-space: nowrap; 
+   }
+a{
+    color: black;
+    text-decoration:wavy;
+    font-size: 13px;
+    font-weight: bold;
+  }
+ .content {
+     margin-top: 60px;
+     padding: 20px;
+    }
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  opacity: 0;
+  animation: slideFadeIn 1s ease-out forwards;
+}
+
+.section-title::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #e07a5f;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    .top-images {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .top-images img {
+      width: 40%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .card {
+      width: 300px;
+      height: 380px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: gray;
+      font-size: 14px;
+      padding: 0 10px;
+    }
+    .price {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+    .stars {
+      color: orange;
+      margin: 5px 0;
+    }
+
+    .btn-group {
+      margin-top: auto;
+      padding-bottom: 15px;
+    }
+
+    .btn-group button {
+      padding: 8px 14px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-group button:hover {
+      background-color: #555;
+    }
+    .card img {
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+/* Slide-in animation on page load */
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.card:nth-child(1)  { animation-delay: 0.1s; }
+.card:nth-child(2)  { animation-delay: 0.2s; }
+.card:nth-child(3)  { animation-delay: 0.3s; }
+.card:nth-child(4)  { animation-delay: 0.4s; }
+.card:nth-child(5)  { animation-delay: 0.5s; }
+.card:nth-child(6)  { animation-delay: 0.6s; }
+.card:nth-child(7)  { animation-delay: 0.7s; }
+.card:nth-child(8)  { animation-delay: 0.8s; }
+.card:nth-child(9)  { animation-delay: 0.9s; }
+.card:nth-child(10) { animation-delay: 1.0s; }
+.card:nth-child(11) { animation-delay: 1.1s; }
+.card:nth-child(12) { animation-delay: 1.2s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+     <div class="nav-left">
+        <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="menu-icon">
+        <img src="images/a menu bar.png" width="40px" height="40px" alt="Menu Icon">
+        </label>
+        <div class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Sign Up</a>
+        </div>
+        </div>
+     <div class="nav-right">
+        <ul class="nav-cont">
+        <li ><a href="Sofa & Seat.html">Sofa & Seat</a></li>
+        <li><a href="Bed & Mattress.html" style="position: relative; right: 40px;">Bed & Mattress</a></li>
+        <li><a href="Kitchen & Dining.html" style="position: relative; right: 60px;">Kitchen & Dining</a></li>
+        <li><a href="Lamps & Lighting.html" style="position: relative; right: 60px;">Lamps & Lighting</a></li>
+        <li><a href="Wall Art & Paintings.html" style="position: relative; right: 60px;">Wall Art & Painting</a></li>
+        <li><a href="Furniture & Decor.html" style="position: relative; right: 50px;">Furniture & Decor</a></li>
+        </ul>
+        </div>
+    </nav>
+
+  <!-- Page Content -->
+  <div class="content">
+     <h1 class="section-title">Cook. Dine. Gather. Love Your Space.</h1>
+    <!-- Top Images -->
+    <div class="top-images">
+      <img src="images/kitchen banner.jpg" alt="Banner 1">
+      <img src="images/dining banner.jpg" alt="Banner 2" style="margin-left: 100px;">
+    </div>
+
+    <!-- Cards -->
+    <div class="cards-container">
+      <!-- 12 Cards with different images -->
+    <!-- Kitchen 1 -->
+    <div class="card">
+    <img src="images/kitchen 1.jpg" alt="Modular Kitchen Cabinet Set">
+    <p class="price">₹24,999</p>
+    <h3>Modular Kitchen Cabinet Set</h3>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <p>Sleek design with ample wall storage and finish</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 2 -->
+    <div class="card">
+    <img src="images/kitchen 2.jpg" alt="Wall Mounted Kitchen Storage">
+    <p class="price">₹10,499</p>
+    <h3>Wall Mounted Kitchen Storage</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Compact and ideal for modern small kitchens</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 3 -->
+    <div class="card">
+    <img src="images/kitchen 3.jpg" alt="Dual Tone Modular Cabinets">
+    <p class="price">₹28,999</p>
+    <h3>Dual Tone Modular Cabinets</h3>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Vibrant styling meets great functionality</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 4 -->
+    <div class="card">
+    <img src="images/kitchen 4.jpg" alt="Wooden Kitchen Shelf Unit">
+    <p class="price">₹7,999</p>
+    <h3>Wooden Kitchen Shelf Unit</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Durable wooden frame with multi-level shelves</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 5 -->
+    <div class="card">
+    <img src="images/kitchen 5.jpg" alt="Glossy Finish Kitchen Setup">
+    <p class="price">₹31,999</p>
+    <h3>Glossy Finish Kitchen Setup</h3>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <p>Contemporary look with smooth drawer handles</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 6 -->
+    <div class="card">
+    <img src="images/kitchen 6.avif" alt="Compact Modular Pantry Unit">
+    <p class="price">₹16,499</p>
+    <h3>Compact Modular Pantry Unit</h3>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <p>Best for studio flats and minimal kitchens</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 7 -->
+    <div class="card">
+    <img src="images/kitchen 7.jpg" alt="Oakwood Kitchen Wall Cabinets">
+    <p class="price">₹13,999</p>
+    <h3>Oakwood Kitchen Wall Cabinets</h3>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Classic wooden design with a timeless appeal</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 8 -->
+    <div class="card">
+    <img src="images/kitchen 8.avif" alt="Open Shelf Kitchen Display">
+    <p class="price">₹6,499</p>
+    <h3>Open Shelf Kitchen Display</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Perfect for spices, jars, and decor items</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 9 -->
+    <div class="card">
+    <img src="images/kitchen 9.webp" alt="Space-Saving Kitchen Storage">
+    <p class="price">₹12,999</p>
+    <h3>Space-Saving Kitchen Storage</h3>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <p>Smart vertical storage with durable finish</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 10 -->
+    <div class="card">
+    <img src="images/kitchen 10.webp" alt="All-White Modern Pantry">
+    <p class="price">₹14,999</p>
+    <h3>All-White Modern Pantry</h3>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <p>Stylish storage with clean modern aesthetics</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 11 -->
+    <div class="card">
+    <img src="images/kitchen 11.jpg" alt="Premium Kitchen Wall Rack">
+    <p class="price">₹9,499</p>
+    <h3>Premium Kitchen Wall Rack</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Convenient hanging storage for essentials</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 12 -->
+    <div class="card">
+    <img src="images/kitchen 12.jpeg" alt="Classic Compact Kitchen">
+    <p class="price">₹22,999</p>
+    <h3>Classic Compact Kitchen</h3>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Ideal for small families and single homes</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 13 -->
+    <div class="card">
+    <img src="images/kitchen 13.webp" alt="Two-Tone Storage Unit">
+    <p class="price">₹17,499</p>
+    <h3>Two-Tone Storage Unit</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Open & closed shelves with modern tones</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 14 -->
+    <div class="card">
+    <img src="images/kitchen 14.jpg" alt="Compact Side Counter Shelf">
+    <p class="price">₹8,499</p>
+    <h3>Compact Side Counter Shelf</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Great for corners and extra countertop space</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Kitchen 15 -->
+    <div class="card">
+    <img src="images/kitchen 15.jpg" alt="Modern Wall-Hung Kitchen Setup">
+    <p class="price">₹26,999</p>
+    <h3>Modern Wall-Hung Kitchen Setup</h3>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Floating cabinets with contemporary design</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+        <!-- Dining 1 -->
+    <div class="card">
+    <img src="images/dining 1.webp" alt="6-Seater Wooden Dining Set">
+    <p class="price">₹35,999</p>
+    <h3>6-Seater Wooden Dining Set</h3>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Spacious table with elegant chair design</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Dining 2 -->
+    <div class="card">
+    <img src="images/dining 2.jpg" alt="Minimalist Glass Dining Table">
+    <p class="price">₹27,499</p>
+    <h3>Minimalist Glass Dining Table</h3>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <p>Tempered glass top with metal base elegance</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Dining 3 -->
+    <div class="card">
+    <img src="images/dining 3.jpg" alt="Rustic 4-Chair Dining Set">
+    <p class="price">₹19,999</p>
+    <h3>Rustic 4-Chair Dining Set</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Wood grain finish for countryside style</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Dining 4 -->
+    <div class="card">
+    <img src="images/dining 4.webp" alt="Foldable Dining Table Set">
+    <p class="price">₹22,499</p>
+    <h3>Foldable Dining Table Set</h3>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <p>Great for small spaces and portability</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Dining 5 -->
+    <div class="card">
+    <img src="images/dining 5.jpg" alt="Luxury Marble Dining Table">
+    <p class="price">₹49,999</p>
+    <h3>Luxury Marble Dining Table</h3>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Classy marble top with premium polish finish</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Dining 6 -->
+    <div class="card">
+    <img src="images/dining 6.jpg" alt="4-Seater Classic Dining Set">
+    <p class="price">₹18,999</p>
+    <h3>4-Seater Classic Dining Set</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Comfortable seating and timeless design</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Dining 7 -->
+    <div class="card">
+    <img src="images/dining 7.jpg" alt="Compact Dining Table for Two">
+    <p class="price">₹12,499</p>
+    <h3>Compact Dining Table for Two</h3>
+    <div class="stars">⭐⭐⭐☆☆</div>
+    <p>Ideal for cozy corners or balconies</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Dining 8 -->
+    <div class="card">
+    <img src="images/dining 8.jpg" alt="Wooden Bench Dining Set">
+    <p class="price">₹25,999</p>
+    <h3>Wooden Bench Dining Set</h3>
+    <div class="stars">⭐⭐⭐⭐☆</div>
+    <p>Modern bench design with sturdy table top</p>
+    <div class="btn-group"><button>Add to Cart</button><button>Buy Now</button></div>
+    </div>
+
+    <!-- Dining 9 -->
+    <div class="card">
+    <img src="images/dining 9.jpg" alt="Elegant Teak Dining Set">
+    <p class="price">₹29,499</p>
+    <h3>Elegant Teak Dining Set</h3>
+    <div class="stars">⭐⭐⭐⭐⭐</div>
+    <p>Rich teakwood finish with padded seat comfort</p>
+    <div class="btn-group">
+        <button>Add to Cart</button>
+        <button>Buy Now</button>
+    </div>
+    </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
+

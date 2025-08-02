@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Furniture & Decor</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    nav{
+    padding: 8px;
+    width: 98%;
+    display: flex;
+    position: fixed; 
+    top: 1px;
+    align-items: center;
+    border-radius: 5px;
+    }
+.nav-left{
+    width: 3%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-right: 20px;
+     }
+.menu-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;                                  /* adjust based on icon position */
+  left: 0;
+  background-color: rgba(112, 82, 82, 0.3);
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  min-width: 150px;
+  
+}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: wheat;
+  font-weight: 500;
+}
+.dropdown-menu a:hover {
+  background-color: #2f2929;
+}
+/* Show dropdown on icon click */
+#menu-toggle:checked + label + .dropdown-menu {
+  display: block;
+}
+.nav-right{
+    width: 98%;
+}
+ul{
+    box-shadow: inset 0 0 0 1000px rgba(179, 134, 134, 0.3);
+    border-radius: 5px;
+   } 
+li{
+    padding: 8px;
+    width: 100px;
+   }
+li:hover{
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px white;
+   }
+.nav-cont{
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap; 
+    white-space: nowrap; 
+   }
+a{
+    color: black;
+    text-decoration:wavy;
+    font-size: 13px;
+    font-weight: bold;
+  }
+ .content {
+     margin-top: 60px;
+     padding: 20px;
+    }
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  opacity: 0;
+  animation: slideFadeIn 1s ease-out forwards;
+}
+
+.section-title::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #e07a5f;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+    .top-images {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .top-images img {
+      width: 40%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .card {
+      width: 300px;
+      height: 380px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: gray;
+      font-size: 14px;
+      padding: 0 10px;
+    }
+    .price {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+    .stars {
+      color: orange;
+      margin: 5px 0;
+    }
+
+    .btn-group {
+      margin-top: auto;
+      padding-bottom: 15px;
+    }
+
+    .btn-group button {
+      padding: 8px 14px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-group button:hover {
+      background-color: #555;
+    }
+    .card img {
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+/* Slide-in animation on page load */
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.card:nth-child(1)  { animation-delay: 0.1s; }
+.card:nth-child(2)  { animation-delay: 0.2s; }
+.card:nth-child(3)  { animation-delay: 0.3s; }
+.card:nth-child(4)  { animation-delay: 0.4s; }
+.card:nth-child(5)  { animation-delay: 0.5s; }
+.card:nth-child(6)  { animation-delay: 0.6s; }
+.card:nth-child(7)  { animation-delay: 0.7s; }
+.card:nth-child(8)  { animation-delay: 0.8s; }
+.card:nth-child(9)  { animation-delay: 0.9s; }
+.card:nth-child(10) { animation-delay: 1.0s; }
+.card:nth-child(11) { animation-delay: 1.1s; }
+.card:nth-child(12) { animation-delay: 1.2s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+     <div class="nav-left">
+        <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="menu-icon">
+        <img src="images/a menu bar.png" width="40px" height="40px" alt="Menu Icon">
+        </label>
+        <div class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Sign Up</a>
+        </div>
+        </div>
+     <div class="nav-right">
+        <ul class="nav-cont">
+        <li ><a href="Sofa & Seat.html">Sofa & Seat</a></li>
+        <li><a href="Bed & Mattress.html" style="position: relative; right: 40px;">Bed & Mattress</a></li>
+        <li><a href="Kitchen & Dining.html" style="position: relative; right: 60px;">Kitchen & Dining</a></li>
+        <li><a href="Lamps & Lighting.html" style="position: relative; right: 60px;">Lamps & Lighting</a></li>
+        <li><a href="Wall Art & Paintings.html" style="position: relative; right: 60px;">Wall Art & Painting</a></li>
+        <li><a href="Furniture & Decor.html" style="position: relative; right: 50px;">Furniture & Decor</a></li>
+        </ul>
+        </div>
+    </nav>
+
+  <!-- Page Content -->
+  <div class="content">
+     <h1 class="section-title">Decor Your Home with Good Furnish</h1>
+    <!-- Top Images -->
+    <div class="top-images">
+      <img src="images/furni banner.jpg" alt="Banner 1">
+      <img src="images/furni banner 1.jpg" style="margin-left: 100px;">
+    </div>
+  
+    <div class="cards-container">
+  <div class="card">
+  <img src="images/furni 1.jpg" alt="Classic Oak Study Desk">
+  <p class="price">₹9,999</p>
+  <h3>Classic Oak Study Desk</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Spacious tabletop with modern drawer design</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 2.avif" alt="Minimalist Modular Cabinet">
+  <p class="price">₹7,499</p>
+  <h3>Minimalist Modular Cabinet</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Sleek finish with ample storage capacity</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 3.jpg" alt="Artisan Coffee Table">
+  <p class="price">₹6,299</p>
+  <h3>Artisan Coffee Table</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Crafted from walnut wood with matte polish</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 4.jpg" alt="Contemporary Accent Chair">
+  <p class="price">₹8,199</p>
+  <h3>Contemporary Accent Chair</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Velvet touch fabric with strong wooden legs</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 5.jpg" alt="Rustic Bookshelf Unit">
+  <p class="price">₹10,499</p>
+  <h3>Rustic Bookshelf Unit</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Multi-tier open design for easy access</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 6.jpg" alt="Vintage Carved Dresser">
+  <p class="price">₹12,799</p>
+  <h3>Vintage Carved Dresser</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Handcrafted patterns with spacious drawers</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 7.jpg" alt="Scandinavian TV Unit">
+  <p class="price">₹11,299</p>
+  <h3>Scandinavian TV Unit</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Compact style with cable management slots</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 8.jpg" alt="Compact Side Table">
+  <p class="price">₹3,699</p>
+  <h3>Compact Side Table</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Space-saving size with smooth rounded edges</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 9.jpg" alt="Elegant Display Rack">
+  <p class="price">₹9,599</p>
+  <h3>Elegant Display Rack</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Perfect for plants, decor, and storage baskets</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 10.jpg" alt="Modern Wall Shelf Set">
+  <p class="price">₹2,899</p>
+  <h3>Modern Wall Shelf Set</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Geometric design with durable finish</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 11.jpg" alt="Foldable Dining Table">
+  <p class="price">₹15,799</p>
+  <h3>Foldable Dining Table</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Space-saving fold design with seating for 4</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 12.jpg" alt="Ladder Shelf Stand">
+  <p class="price">₹5,999</p>
+  <h3>Ladder Shelf Stand</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Great for books, candles, and decor</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 13.jpg" alt="Elegant Floating Shelves">
+  <p class="price">₹2,499</p>
+  <h3>Elegant Floating Shelves</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Wall-mounted wood panels for modern decor</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 14.jpg" alt="Classic Wooden Bench">
+  <p class="price">₹6,199</p>
+  <h3>Classic Wooden Bench</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Strong frame ideal for hallways or porches</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 15.jpg" alt="Art Deco Nightstand">
+  <p class="price">₹4,399</p>
+  <h3>Art Deco Nightstand</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Chic and compact with brass-finish handles</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 16.jpg" alt="Premium Glass Coffee Table">
+  <p class="price">₹10,299</p>
+  <h3>Premium Glass Coffee Table</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Tempered glass top with gold-finish legs</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 17.jpg" alt="Curved Lounge Chair">
+  <p class="price">₹12,999</p>
+  <h3>Curved Lounge Chair</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Comfort meets modern in this plush recliner</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 18.webp" alt="Modern Bookshelf Divider">
+  <p class="price">₹11,799</p>
+  <h3>Modern Bookshelf Divider</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Dual purpose room divider & open shelf</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 19.jpg" alt="Vintage Trunk Storage">
+  <p class="price">₹7,299</p>
+  <h3>Vintage Trunk Storage</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Retro charm with spacious hidden storage</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 20.jpg" alt="Wicker Side Table">
+  <p class="price">₹3,499</p>
+  <h3>Wicker Side Table</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Boho style round table for cozy corners</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 21.jpg" alt="White Wooden Cabinet">
+  <p class="price">₹8,899</p>
+  <h3>White Wooden Cabinet</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Classic dual-door storage with drawers</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 22.jpg" alt="Corner Book Tower">
+  <p class="price">₹4,899</p>
+  <h3>Corner Book Tower</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Tall vertical unit for book & plant display</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 23.jpg" alt="Round Edge Wooden Stool">
+  <p class="price">₹2,199</p>
+  <h3>Round Edge Wooden Stool</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Durable, stylish and multi-functional</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/furni 24.jpg" alt="Smart Drawer Storage Unit">
+  <p class="price">₹9,099</p>
+  <h3>Smart Drawer Storage Unit</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Multi-tier drawers with lock and wheels</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+ 
+

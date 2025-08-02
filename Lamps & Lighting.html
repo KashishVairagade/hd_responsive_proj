@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lamps & Lighting</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    nav{
+    padding: 8px;
+    width: 98%;
+    display: flex;
+    position: fixed; 
+    top: 1px;
+    align-items: center;
+    border-radius: 5px;
+    }
+.nav-left{
+    width: 3%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-right: 20px;
+     }
+.menu-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;                                  /* adjust based on icon position */
+  left: 0;
+  background-color: rgba(112, 82, 82, 0.3);
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  min-width: 150px;
+  
+}
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: wheat;
+  font-weight: 500;
+}
+.dropdown-menu a:hover {
+  background-color: #2f2929;
+}
+/* Show dropdown on icon click */
+#menu-toggle:checked + label + .dropdown-menu {
+  display: block;
+}
+.nav-right{
+    width: 98%;
+}
+ul{
+    box-shadow: inset 0 0 0 1000px rgba(179, 134, 134, 0.3);
+    border-radius: 5px;
+   } 
+li{
+    padding: 8px;
+    width: 100px;
+   }
+li:hover{
+    text-transform: capitalize;
+    text-shadow: 1px 1px 2px white;
+   }
+.nav-cont{
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap; 
+    white-space: nowrap; 
+   }
+a{
+    color: black;
+    text-decoration:wavy;
+    font-size: 13px;
+    font-weight: bold;
+  }
+ .content {
+     margin-top: 60px;
+     padding: 20px;
+    }
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+  opacity: 0;
+  animation: slideFadeIn 1s ease-out forwards;
+}
+
+.section-title::after {
+  content: "";
+  width: 100px;
+  height: 4px;
+  background: #e07a5f;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.top-images {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.banner-full {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.banner-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.banner-half {
+  width: 48%;
+  border-radius: 10px;
+  height: auto;
+}
+
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .card {
+      width: 300px;
+      height: 380px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: gray;
+      font-size: 14px;
+      padding: 0 10px;
+    }
+    .price {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+    .stars {
+      color: orange;
+      margin: 5px 0;
+    }
+
+    .btn-group {
+      margin-top: auto;
+      padding-bottom: 15px;
+    }
+
+    .btn-group button {
+      padding: 8px 14px;
+      margin: 5px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn-group button:hover {
+      background-color: #555;
+    }
+    .card img {
+  transition: transform 0.3s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
+}
+
+/* Slide-in animation on page load */
+.card {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideIn 0.6s ease-out forwards;
+}
+
+.card:nth-child(1)  { animation-delay: 0.1s; }
+.card:nth-child(2)  { animation-delay: 0.2s; }
+.card:nth-child(3)  { animation-delay: 0.3s; }
+.card:nth-child(4)  { animation-delay: 0.4s; }
+.card:nth-child(5)  { animation-delay: 0.5s; }
+.card:nth-child(6)  { animation-delay: 0.6s; }
+.card:nth-child(7)  { animation-delay: 0.7s; }
+.card:nth-child(8)  { animation-delay: 0.8s; }
+.card:nth-child(9)  { animation-delay: 0.9s; }
+.card:nth-child(10) { animation-delay: 1.0s; }
+.card:nth-child(11) { animation-delay: 1.1s; }
+.card:nth-child(12) { animation-delay: 1.2s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+     <div class="nav-left">
+        <input type="checkbox" id="menu-toggle" hidden>
+        <label for="menu-toggle" class="menu-icon">
+        <img src="images/a menu bar.png" width="40px" height="40px" alt="Menu Icon">
+        </label>
+        <div class="dropdown-menu">
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Sign Up</a>
+        </div>
+        </div>
+     <div class="nav-right">
+        <ul class="nav-cont">
+        <li ><a href="Sofa & Seat.html">Sofa & Seat</a></li>
+        <li><a href="Bed & Mattress.html" style="position: relative; right: 40px;">Bed & Mattress</a></li>
+        <li><a href="Kitchen & Dining.html" style="position: relative; right: 60px;">Kitchen & Dining</a></li>
+        <li><a href="Lamps & Lighting.html" style="position: relative; right: 60px;">Lamps & Lighting</a></li>
+        <li><a href="Wall Art & Paintings.html" style="position: relative; right: 60px;">Wall Art & Painting</a></li>
+        <li><a href="Furniture & Decor.html" style="position: relative; right: 50px;">Furniture & Decor</a></li>
+        </ul>
+        </div>
+    </nav>
+
+  <!-- Page Content -->
+  <div class="content">
+     <h1 class="section-title">Glow Up Your Space with Style & Warmth</h1>
+    <!-- Top Images -->
+    <div class="top-images">
+  <img src="images/lamp banner.jpg" alt="Lighting Banner 1" class="banner-full">
+  <div class="banner-row">
+    <img src="images/lamps banner.jpg" alt="Lighting Banner 2" class="banner-half">
+    <img src="images/lighting banner.webp" alt="Lighting Banner 3" class="banner-half">
+  </div>
+</div>
+
+    <!-- Cards -->
+    <div class="cards-container">
+      <div class="card">
+  <img src="images/lamp 1.webp" alt="Modern Ceramic Table Lamp">
+  <p class="price">₹1,899</p>
+  <h3>Modern Ceramic Table Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Elegant ceramic base with soft ambient glow for cozy spaces.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 2.jpg" alt="Antique Brass Floor Lamp">
+  <p class="price">₹2,499</p>
+  <h3>Antique Brass Floor Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Classic brass design with sturdy base and vintage charm.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 3.webp" alt="Glass Globe Night Light">
+  <p class="price">₹999</p>
+  <h3>Glass Globe Night Light</h3>
+  <div class="stars">⭐⭐⭐</div>
+  <p>Soft glowing glass orb perfect for bedside ambience.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 4.jpg" alt="Vintage Tripod Lamp">
+  <p class="price">₹3,299</p>
+  <h3>Vintage Tripod Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Industrial-style metal tripod lamp with modern flair.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 5.jpg" alt="Wooden Base Table Lamp">
+  <p class="price">₹1,499</p>
+  <h3>Wooden Base Table Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Warm wooden tones with neutral shade for stylish decor.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 6.jpg" alt="Elegant Black Desk Lamp">
+  <p class="price">₹1,799</p>
+  <h3>Elegant Black Desk Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Modern design ideal for workspaces or night reading.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 7.jpg" alt="Golden Luxury Lamp">
+  <p class="price">₹2,299</p>
+  <h3>Golden Luxury Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Premium gold finish adds glam to your living space.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 8.jpg" alt="Adjustable Arm Lamp">
+  <p class="price">₹1,299</p>
+  <h3>Adjustable Arm Lamp</h3>
+  <div class="stars">⭐⭐⭐</div>
+  <p>Flexible and functional lighting for reading or taskwork.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 9.jpg" alt="Rustic Wooden Lamp">
+  <p class="price">₹1,649</p>
+  <h3>Rustic Wooden Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Earthy texture and handmade look perfect for natural themes.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp10.jpg" alt="Sleek White LED Lamp">
+  <p class="price">₹999</p>
+  <h3>Sleek White LED Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Minimalist design with bright LED for desks or side tables.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/lamp 11.webp" alt="Art Deco Touch Lamp">
+  <p class="price">₹1,899</p>
+  <h3>Art Deco Touch Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Touch-control lamp with stunning retro design and finish.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+<!-- Lighting 1 -->
+<div class="card">
+  <img src="images/lighting 1.webp" alt="Vintage Glass Pendant Light">
+  <p class="price">₹2,599</p>
+  <h3>Vintage Glass Pendant Light</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Elegant pendant design that brings warm charm to any space.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 2 -->
+<div class="card">
+  <img src="images/lighting 2.webp" alt="Minimalist Wall Sconce">
+  <p class="price">₹1,999</p>
+  <h3>Minimalist Wall Sconce</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Sleek and modern, perfect for corridors and cozy corners.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 3 -->
+<div class="card">
+  <img src="images/lighting 3.webp" alt="Boho Rattan Hanging Lamp">
+  <p class="price">₹3,499</p>
+  <h3>Boho Rattan Hanging Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Natural texture with a warm glow — great for earthy interiors.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 4 -->
+<div class="card">
+  <img src="images/lighting 4.jpg" alt="Modern Spiral LED Light">
+  <p class="price">₹4,899</p>
+  <h3>Modern Spiral LED Light</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Futuristic design with energy-efficient LED lighting.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 5 -->
+<div class="card">
+  <img src="images/lighting 5.webp" alt="Cluster Hanging Light">
+  <p class="price">₹5,299</p>
+  <h3>Cluster Hanging Light</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Multi-bulb ceiling cluster for statement dining or lounge areas.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 6 -->
+<div class="card">
+  <img src="images/lighting 6.jpg" alt="Geometric Ceiling Light">
+  <p class="price">₹3,799</p>
+  <h3>Geometric Ceiling Light</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Bold, geometric design with clean lines for a modern look.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 7 -->
+<div class="card">
+  <img src="images/lighting 7.png" alt="Crystal Chandelier Light">
+  <p class="price">₹7,999</p>
+  <h3>Crystal Chandelier Light</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Luxury and shine combined — ideal for halls or master bedrooms.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 8 -->
+<div class="card">
+  <img src="images/lighting 8.jpg" alt="Golden Cage Wall Light">
+  <p class="price">₹2,299</p>
+  <h3>Golden Cage Wall Light</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Chic cage design perfect for ambient wall lighting.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 9 -->
+<div class="card">
+  <img src="images/lighting 9.jpeg" alt="Floating Ring LED Light">
+  <p class="price">₹6,499</p>
+  <h3>Floating Ring LED Light</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Stylish rings float above, casting stunning soft light.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 10 -->
+<div class="card">
+  <img src="images/lighting 10.webp" alt="Vintage Industrial Bulb Light">
+  <p class="price">₹2,699</p>
+  <h3>Vintage Industrial Bulb Light</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Perfect for cafes or creative workspaces with an industrial vibe.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 11 -->
+<div class="card">
+  <img src="images/lighting 11.jpg" alt="Adjustable Wall Mounted Lamp">
+  <p class="price">₹1,899</p>
+  <h3>Adjustable Wall Mounted Lamp</h3>
+  <div class="stars">⭐⭐⭐⭐</div>
+  <p>Flexible and focused — ideal for bedsides and study corners.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 12 -->
+<div class="card">
+  <img src="images/lighting 12.jpg" alt="Ceiling Mount UFO Light">
+  <p class="price">₹3,299</p>
+  <h3>Ceiling Mount UFO Light</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Bright and minimal design, easy to install, and energy efficient.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+<!-- Lighting 13 -->
+<div class="card">
+  <img src="images/lighting 13.jpg" alt="Elegance in Ceiling">
+  <p class="price">₹5,299</p>
+  <h3>Elegance in Ceiling</h3>
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>Bright and minimal design, easy to install, and energy efficient.</p>
+  <div class="btn-group">
+    <button>Add to Cart</button>
+    <button>Buy Now</button>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+
+</body>
+</html>
